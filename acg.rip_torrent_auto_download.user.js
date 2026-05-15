@@ -5,7 +5,7 @@
 // @description  acg.rip torrent auto download
 // @author       WayneFerdon
 // @include        *acg.rip*
-// @updateURL https://github.com/WayneFerdon/acg.rip_torrent_auto_download/raw/refs/heads/main/acg.rip_torrent_auto_download.user.user.js
+// @updateURL https://github.com/WayneFerdon/acg.rip_torrent_auto_download/raw/refs/heads/main/acg.rip_torrent_auto_download.user.js
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
