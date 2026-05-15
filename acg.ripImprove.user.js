@@ -1,20 +1,17 @@
 // ==UserScript==
-// @name         acg.rip torrent auto download
+// @name         acg.ripImprove
 // @namespace    http://tampermonkey.net/
 // @version      2026.05.15
 // @description  acg.rip torrent auto download
 // @author       WayneFerdon
 // @include        *acg.rip*
-// @updateURL https://github.com/WayneFerdon/acg.rip_torrent_auto_download/raw/refs/heads/main/acg.rip_torrent_auto_download.user.js
+// @updateURL https://github.com/WayneFerdon/acg.ripImprove/raw/refs/heads/main/acg.ripImprove.user.js
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
-const tracking = GM_getValue('tracking', [
-  /\[ANi\]( Tsue to Tsurugi no Wistoria \/)* 杖與劍的魔劍譚 Season 2 - /,
-  '[ANi] 關於我轉生變成史萊姆這檔事 第四季 - ',
-]);
+const tracking = GM_getValue('tracking').map(t => t.match(/^\/.*\/$/) ? new RegExp(t.replace(/^\/|\/$/g, '')) : t);
 
 const $ajax = initAjax();
 const colors = { last: 'palegreen', tracking: 'crimson', downloaded: 'rebeccapurple' }
